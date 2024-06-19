@@ -1,0 +1,132 @@
+@import "https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap";
+body {
+  color: #fff;
+  background-color: #141414;
+  margin: 0;
+  padding: 0;
+  font-family: Jost;
+}
+
+main {
+  flex-direction: column;
+  min-width: 1280px;
+  margin-top: 5em;
+  display: flex;
+}
+
+header {
+  place-content: center space-between;
+  align-items: center;
+  padding: 2em;
+  display: flex;
+}
+
+header .header-logo {
+  align-items: center;
+  display: flex;
+}
+
+header .header-logo .platform-title {
+  margin-left: 1em;
+}
+
+header .header-buttons {
+  margin: 1em;
+  display: flex;
+}
+
+header .header-buttons div {
+  margin-right: 1em;
+  padding: 20px;
+}
+
+header .header-buttons div:hover {
+  color: #00008b;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.section-title, .section-title-responsive {
+  margin-left: 1em;
+}
+
+.section-title #top-text, .section-title-responsive #top-text {
+  font-size: 125%;
+  font-weight: bold;
+}
+
+.top {
+  flex-flow: wrap;
+  justify-content: center;
+  display: flex;
+}
+
+.first, .second {
+  flex-wrap: wrap;
+  place-content: center;
+  gap: 5px;
+  display: flex;
+}
+
+.top-item {
+  min-width: 225px;
+}
+
+.item img {
+  min-width: 250px;
+}
+
+.item img:hover {
+  transition: transform .75s;
+  transform: scale(1.25);
+}
+
+.section-title-responsive {
+  display: none;
+}
+
+@media screen and (width <= 1280px) {
+  main {
+    min-width: initial;
+    width: 100%;
+  }
+
+  .platform-title {
+    display: none;
+  }
+
+  .top {
+    flex-wrap: wrap;
+    place-content: center;
+  }
+
+  .top .top-item:nth-last-child(-n+2) {
+    display: none;
+  }
+
+  .section-title {
+    margin: 2em;
+  }
+
+  .section-title:has( > span#top-text) {
+    display: none;
+  }
+
+  .section-title-responsive {
+    margin: 2em;
+    display: block;
+  }
+}
+
+@media screen and (width <= 420px) {
+  header {
+    justify-content: center;
+  }
+}
+
+@media screen and (width >= 1920px) {
+  .top {
+    justify-content: space-between;
+  }
+}
+/*# sourceMappingURL=index.1b8f239a.css.map */

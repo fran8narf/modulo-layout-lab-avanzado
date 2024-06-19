@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    padding: 0;
+    margin: 0;
+    background-color:  #141414;
+    color: #FFF;
+    font-family: 'Jost';
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-width: 1280px;
+    margin-top: 5em;
+}
+
+header {
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+
+        .platform-title {
+            margin-left: 1em;
+        }
+    }
+    .header-buttons {
+        display: flex;
+        margin: 1em;
+        div {
+            margin-right: 1em;
+            padding: 20px;
+            &:hover {
+                background-color: #FFF;
+                color: darkblue;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.section-title, .section-title-responsive {
+    margin-left: 1em;
+    #top-text {
+        font: {
+            weight: bold;
+            size: 125%;
+        }
+    }
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.first, .second {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 5px;
+}
+
+
+.top-item {
+    min-width: 225px;
+}
+
+.item {
+    img {
+        min-width: 250px;
+        &:hover {
+            transition: .75s transform;
+            transform: scale(1.25);
+        }
+    }
+}
+
+.section-title-responsive {
+    display: none;
+}
+
+@media screen and (width <= 1280px) {
+    main {
+        width: 100%;
+        min-width: initial;
+    }
+    .platform-title {
+        display: none;
+    }
+    .top {
+        place-content: center;
+        flex-wrap: wrap;
+        .top-item:nth-last-child(-n+2) {
+            display: none;
+        }
+    }
+    .section-title {
+        margin: 2em 2em 2em;
+        &:has(> span#top-text) {
+            display: none;
+        }
+    }
+    .section-title-responsive {
+        margin: 2em 2em 2em;
+        display: block;
+    }
+}
+
+@media screen and (width <= 420px) {
+    header {
+        justify-content: center;
+    }
+}
+
+@media screen and (width >= 1920px) {
+    .top {
+        justify-content: space-between;
+    }
+} 
